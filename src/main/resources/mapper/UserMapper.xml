@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 网上搜索mapper头部 -->
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 写映射 namespace是用来指定此xml文件所对应的.java映射类 -->
+<mapper namespace="edu.swjtuhc.demo.mapper.UserMapper">
+	<insert id="insertUser" parameterType="edu.swjtuhc.demo.model.SysUser">  <!-- id是mapper接口里insert语句的id 属性parameterType指代插入参数，参数类型是SysUser  insert应该有返回结果，但类型都是整型就不用写	 -->
+		insert into sysuser
+		(username,password,name,email,age,gender)
+		values
+		(#{username},#{password},#{name},#{email},#{age},#{gender})  <!-- 参数是模型类SysUser里面所对应的属性值 -->
+	</insert>
+	<select id="selectUserByUsername" parameterType="java.lang.String" resultType="edu.swjtuhc.demo.model.SysUser"><!-- d是mapper接口里select语句的id 属性parameterType指代插入参数，参数类型是String  返回结果resultType直接绑定到某一个模型类上，这儿绑定在SysUser上 -->
+		select * from sysuser
+		where
+		username = #{username}
+	</select>
+
+
+</mapper>
