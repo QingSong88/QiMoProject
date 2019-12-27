@@ -2,19 +2,34 @@ package edu.swjtuhc.demo.model;
 
 //模型类，响应UserController
 public class SysUser {
-	int uID;
+	String  stuID;
     String username;
     String password;
     String name;
+    String newPassword;
     String email;
     int age;
     String gender;
     
-	public int getuID() {
-		return uID;
+	@Override
+	public String toString() {
+		return "SysUser [stuID=" + stuID + ", username=" + username + ", password=" + password + ", name=" + name
+				+ ", newPassword=" + newPassword + ", email=" + email + ", age=" + age + ", gender=" + gender + "]";
 	}
-	public void setuID(int uID) {
-		this.uID = uID;
+
+	public String getNewPassword() {
+		return newPassword;
+	}
+
+	public void setNewPassword(String newPassword) {
+		this.newPassword = newPassword;
+	}
+
+	public String getstuID() {
+		return stuID;
+	}
+	public void setstuID(String stuID) {
+		this.stuID = stuID;
 	}
 	public String getUsername() {
 		return username;
@@ -51,10 +66,5 @@ public class SysUser {
 	}
 	public void setGender(String gender) {
 		this.gender = gender;
-	}
-	@Override
-	public String toString() {
-		return "SysUser [username=" + username + ", password=" + password + ", name=" + name + ", email=" + email
-				+ ", age=" + age + ", gender=" + gender + "]";
 	}
 }

@@ -8,7 +8,9 @@ import edu.swjtuhc.demo.model.SysUser;
 @Mapper
 public interface UserMapper {
 	
-	public SysUser selectUserByUsername(String username);
+	public SysUser selectUserByStuID(String stuID);
 	
 	public int insertUser(SysUser user);
+	
+	public int alterUserPassword(SysUser user);
 }

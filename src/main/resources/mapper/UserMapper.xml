@@ -6,15 +6,18 @@
 <mapper namespace="edu.swjtuhc.demo.mapper.UserMapper">
 	<insert id="insertUser" parameterType="edu.swjtuhc.demo.model.SysUser">  <!-- id是mapper接口里insert语句的id 属性parameterType指代插入参数，参数类型是SysUser  insert应该有返回结果，但类型都是整型就不用写	 -->
 		insert into sysuser
-		(username,password,name,email,age,gender)
+		(stuID,username,password,name,email,age,gender)
 		values
-		(#{username},#{password},#{name},#{email},#{age},#{gender})  <!-- 参数是模型类SysUser里面所对应的属性值 -->
+		(#{stuID},#{username},#{password},#{name},#{email},#{age},#{gender})  <!-- 参数是模型类SysUser里面所对应的属性值 -->
 	</insert>
-	<select id="selectUserByUsername" parameterType="java.lang.String" resultType="edu.swjtuhc.demo.model.SysUser"><!-- d是mapper接口里select语句的id 属性parameterType指代插入参数，参数类型是String  返回结果resultType直接绑定到某一个模型类上，这儿绑定在SysUser上 -->
+	<select id="selectUserByStuID" parameterType="java.lang.String" resultType="edu.swjtuhc.demo.model.SysUser"><!-- d是mapper接口里select语句的id 属性parameterType指代插入参数，参数类型是String  返回结果resultType直接绑定到某一个模型类上，这儿绑定在SysUser上 -->
 		select * from sysuser
 		where
-		username = #{username}
+		stuID = #{stuID}
 	</select>
-
-
+	<update id="alterUserPassword" parameterType="edu.swjtuhc.demo.model.SysUser">
+		update sysuser
+		set password = #{newPassword}
+		where stuID = #{stuID}
+	</update>
 </mapper>
