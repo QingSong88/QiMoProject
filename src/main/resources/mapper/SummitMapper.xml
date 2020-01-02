@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="edu.swjtuhc.demo.mapper.SummitMapper" >
+
+	<insert id="insertSummit" parameterType="edu.swjtuhc.demo.model.Summit">
+		insert into help
+		(message,picture)
+		values
+		(#{hMessage},#{hPicture})
+	
+	</insert>
+	
+	
+	<select  id="selectSumByhPicture" parameterType="java.lang.String" resultType="edu.swjtuhc.demo.model.Summit">
+	select *from help
+	where
+	picture = #{hPicture}
+	
+	</select>
+	
+</mapper>
