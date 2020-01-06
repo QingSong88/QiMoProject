@@ -1,8 +1,8 @@
 #数据库基础配置
 spring:
   datasource:    username: root
-    password: zrj0601haha
-    url: jdbc:mysql://localhost:3306/test?userSSL=false&serverTimezone=GMT%2B8&allowPublicKeyRetrieval=true
+    password: 789
+    url: jdbc:mysql://localhost:3306/web?userSSL=false&serverTimezone=GMT%2B8&allowPublicKeyRetrieval=true
     driver-class-name: com.mysql.jdbc.Driver
     
 #url的写法中注意数据库的名称、每行代码后面不能有空格   驱动不用写cj，mysql在8.0以上才用cj
